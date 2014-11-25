@@ -29,6 +29,7 @@
 
 - (void)showCalendar {
     CKCalendarView *calendar = [[CKCalendarView alloc] init];
+    calendar.frame = CGRectMake(0, 50, [UIScreen mainScreen].bounds.size.width, 320);
     [self.view addSubview:calendar];
 }
 
