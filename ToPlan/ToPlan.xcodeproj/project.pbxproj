@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		9C6AE72E1A15C00900C4790E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE72D1A15C00900C4790E /* main.m */; };
 		9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7301A15C00900C4790E /* AppDelegate.m */; };
-		9C6AE7341A15C00900C4790E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7331A15C00900C4790E /* FirstViewController.m */; };
-		9C6AE7371A15C00900C4790E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7361A15C00900C4790E /* SecondViewController.m */; };
+		9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7331A15C00900C4790E /* CalendarViewController.m */; };
+		9C6AE7371A15C00900C4790E /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7361A15C00900C4790E /* RecordViewController.m */; };
 		9C6AE73A1A15C00900C4790E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6AE7381A15C00900C4790E /* Main.storyboard */; };
 		9C6AE73C1A15C00900C4790E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6AE73B1A15C00900C4790E /* Images.xcassets */; };
 		9C6AE73F1A15C00900C4790E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C6AE73D1A15C00900C4790E /* LaunchScreen.xib */; };
@@ -40,10 +40,10 @@
 		9C6AE72D1A15C00900C4790E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C6AE72F1A15C00900C4790E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C6AE7301A15C00900C4790E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9C6AE7321A15C00900C4790E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		9C6AE7331A15C00900C4790E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		9C6AE7351A15C00900C4790E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9C6AE7361A15C00900C4790E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9C6AE7321A15C00900C4790E /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		9C6AE7331A15C00900C4790E /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		9C6AE7351A15C00900C4790E /* RecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		9C6AE7361A15C00900C4790E /* RecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		9C6AE7391A15C00900C4790E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C6AE73B1A15C00900C4790E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C6AE73E1A15C00900C4790E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -103,15 +103,15 @@
 		9C6AE72A1A15C00900C4790E /* ToPlan */ = {
 			isa = PBXGroup;
 			children = (
+				9C6AE72F1A15C00900C4790E /* AppDelegate.h */,
+				9C6AE7301A15C00900C4790E /* AppDelegate.m */,
 				9C6AE7541A15C21B00C4790E /* CKCalendarView.h */,
 				9C6AE7551A15C21B00C4790E /* CKCalendarView.m */,
 				9C6AE7561A15C21B00C4790E /* resources */,
-				9C6AE72F1A15C00900C4790E /* AppDelegate.h */,
-				9C6AE7301A15C00900C4790E /* AppDelegate.m */,
-				9C6AE7321A15C00900C4790E /* FirstViewController.h */,
-				9C6AE7331A15C00900C4790E /* FirstViewController.m */,
-				9C6AE7351A15C00900C4790E /* SecondViewController.h */,
-				9C6AE7361A15C00900C4790E /* SecondViewController.m */,
+				9C6AE7321A15C00900C4790E /* CalendarViewController.h */,
+				9C6AE7331A15C00900C4790E /* CalendarViewController.m */,
+				9C6AE7351A15C00900C4790E /* RecordViewController.h */,
+				9C6AE7361A15C00900C4790E /* RecordViewController.m */,
 				9C6AE7381A15C00900C4790E /* Main.storyboard */,
 				9C6AE73B1A15C00900C4790E /* Images.xcassets */,
 				9C6AE73D1A15C00900C4790E /* LaunchScreen.xib */,
@@ -262,9 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6AE75B1A15C21B00C4790E /* CKCalendarView.m in Sources */,
-				9C6AE7371A15C00900C4790E /* SecondViewController.m in Sources */,
+				9C6AE7371A15C00900C4790E /* RecordViewController.m in Sources */,
 				9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */,
-				9C6AE7341A15C00900C4790E /* FirstViewController.m in Sources */,
+				9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */,
 				9C6AE72E1A15C00900C4790E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +456,7 @@
 				9C6AE7501A15C00A00C4790E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C6AE7511A15C00A00C4790E /* Build configuration list for PBXNativeTarget "ToPlanTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				9C6AE7531A15C00A00C4790E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

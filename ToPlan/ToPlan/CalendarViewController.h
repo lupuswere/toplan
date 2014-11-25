@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  ToPlan
 //
 //  Created by Lifei Li on 14/11/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface CalendarViewController : UIViewController
 
 
 @end

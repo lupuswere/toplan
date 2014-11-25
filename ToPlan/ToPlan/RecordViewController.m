@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 Other Candidates. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "RecordViewController.h"
 
-@interface SecondViewController ()
+@interface RecordViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation RecordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

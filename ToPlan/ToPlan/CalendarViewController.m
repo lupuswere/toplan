@@ -6,15 +6,15 @@
 //  Copyright (c) 2014年 Other Candidates. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CalendarViewController.h"
 #import "CKCalendarView.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
-@interface FirstViewController ()
+@interface CalendarViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation CalendarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +31,10 @@
     CKCalendarView *calendar = [[CKCalendarView alloc] init];
     calendar.frame = CGRectMake(0, 50, [UIScreen mainScreen].bounds.size.width, 320);
     [self.view addSubview:calendar];
+    calendar.delegate = self;
 }
 
+- (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
+    //TODO
+}
 @end
