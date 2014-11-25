@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */; };
 		9C6AE72E1A15C00900C4790E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE72D1A15C00900C4790E /* main.m */; };
 		9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7301A15C00900C4790E /* AppDelegate.m */; };
 		9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7331A15C00900C4790E /* CalendarViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C419CCD1A2452A600369BE7 /* DeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineViewController.h; sourceTree = "<group>"; };
+		9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineViewController.m; sourceTree = "<group>"; };
 		9C6AE7281A15C00900C4790E /* ToPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6AE72C1A15C00900C4790E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C6AE72D1A15C00900C4790E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				9C6AE7331A15C00900C4790E /* CalendarViewController.m */,
 				9C6AE7351A15C00900C4790E /* RecordViewController.h */,
 				9C6AE7361A15C00900C4790E /* RecordViewController.m */,
+				9C419CCD1A2452A600369BE7 /* DeadlineViewController.h */,
+				9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */,
 				9C6AE7381A15C00900C4790E /* Main.storyboard */,
 				9C6AE73B1A15C00900C4790E /* Images.xcassets */,
 				9C6AE73D1A15C00900C4790E /* LaunchScreen.xib */,
@@ -265,6 +270,7 @@
 				9C6AE7371A15C00900C4790E /* RecordViewController.m in Sources */,
 				9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */,
 				9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */,
+				9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */,
 				9C6AE72E1A15C00900C4790E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
