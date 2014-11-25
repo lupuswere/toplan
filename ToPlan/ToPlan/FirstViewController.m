@@ -7,7 +7,9 @@
 //
 
 #import "FirstViewController.h"
-
+#import "CKCalendarView.h"
+#import <CoreGraphics/CoreGraphics.h>
+#import <QuartzCore/QuartzCore.h>
 @interface FirstViewController ()
 
 @end
@@ -17,11 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self showCalendar];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)showCalendar {
+    CKCalendarView *calendar = [[CKCalendarView alloc] init];
+    [self.view addSubview:calendar];
 }
 
 @end
