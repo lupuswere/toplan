@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RecordViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *forTest;
 
 
 @end

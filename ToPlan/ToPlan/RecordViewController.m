@@ -7,7 +7,7 @@
 //
 
 #import "RecordViewController.h"
-
+#import "AppDelegate.h"
 @interface RecordViewController ()
 
 @end
@@ -17,11 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self updateUserInterface];
 }
-
+- (void)viewDidAppear:(BOOL)animated {
+    [self updateUserInterface];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateUserInterface {
+    //TODO
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSString *str = [NSDateFormatter localizedStringFromDate:appDelegate.selectedDate
+                                                          dateStyle:NSDateFormatterShortStyle
+                                                          timeStyle:NSDateFormatterFullStyle];
+    self.forTest.text = str;
+}
 @end

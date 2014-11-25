@@ -10,6 +10,7 @@
 #import "CKCalendarView.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 @interface CalendarViewController ()
 
 @end
@@ -36,5 +37,13 @@
 
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
     //TODO
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.selectedDate = date;
+}
+
+- (void)calendar:(CKCalendarView *)calendar didDeselectDate:(NSDate *)date {
+    //TODO
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.selectedDate = [NSDate date];
 }
 @end
