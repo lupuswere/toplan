@@ -11,6 +11,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
+#import "DBManager.h"
 @interface CalendarViewController ()
 
 @end
@@ -46,4 +47,5 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.selectedDate = [NSDate date];
 }
+
 @end

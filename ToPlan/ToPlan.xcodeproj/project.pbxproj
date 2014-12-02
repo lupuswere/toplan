@@ -23,6 +23,8 @@
 		9C6AE75F1A15C21B00C4790E /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6AE75A1A15C21B00C4790E /* right_arrow@2x.png */; };
 		9C6AE7611A15C24900C4790E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6AE7601A15C24900C4790E /* QuartzCore.framework */; };
 		9C6AE7631A15C25000C4790E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6AE7621A15C25000C4790E /* CoreGraphics.framework */; };
+		9DBEF09B1A2D6A760002236A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBEF09A1A2D6A760002236A /* DBManager.m */; };
+		9DBEF09D1A2D71A40002236A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBEF09C1A2D71A40002236A /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		9C6AE75A1A15C21B00C4790E /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 		9C6AE7601A15C24900C4790E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C6AE7621A15C25000C4790E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9DBEF0991A2D6A760002236A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		9DBEF09A1A2D6A760002236A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		9DBEF09C1A2D71A40002236A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBEF09D1A2D71A40002236A /* libsqlite3.dylib in Frameworks */,
 				9C6AE7631A15C25000C4790E /* CoreGraphics.framework in Frameworks */,
 				9C6AE7611A15C24900C4790E /* QuartzCore.framework in Frameworks */,
 			);
@@ -86,6 +92,7 @@
 		9C6AE71F1A15C00900C4790E = {
 			isa = PBXGroup;
 			children = (
+				9DBEF09C1A2D71A40002236A /* libsqlite3.dylib */,
 				9C6AE7621A15C25000C4790E /* CoreGraphics.framework */,
 				9C6AE7601A15C24900C4790E /* QuartzCore.framework */,
 				9C6AE72A1A15C00900C4790E /* ToPlan */,
@@ -107,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				9C6AE72F1A15C00900C4790E /* AppDelegate.h */,
+				9DBEF0991A2D6A760002236A /* DBManager.h */,
+				9DBEF09A1A2D6A760002236A /* DBManager.m */,
 				9C6AE7301A15C00900C4790E /* AppDelegate.m */,
 				9C6AE7541A15C21B00C4790E /* CKCalendarView.h */,
 				9C6AE7551A15C21B00C4790E /* CKCalendarView.m */,
@@ -266,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBEF09B1A2D6A760002236A /* DBManager.m in Sources */,
 				9C6AE75B1A15C21B00C4790E /* CKCalendarView.m in Sources */,
 				9C6AE7371A15C00900C4790E /* RecordViewController.m in Sources */,
 				9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */,
@@ -394,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ToPlan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -404,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ToPlan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
