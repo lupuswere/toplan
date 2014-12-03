@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class TaskDeadlineTable;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) NSDate *selectedDate;
-
+@property (strong, nonatomic) NSString *selectedDate;
+@property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
 @end
 

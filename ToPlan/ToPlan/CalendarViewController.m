@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     [self showCalendar];
 }
 
@@ -39,13 +40,19 @@
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
     //TODO
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    appDelegate.selectedDate = date;
+    NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
+    [formater setDateFormat:@"yyyyMMdd"];
+    NSString *curTime = [formater stringFromDate:date];
+    appDelegate.selectedDate = curTime;
 }
 
 - (void)calendar:(CKCalendarView *)calendar didDeselectDate:(NSDate *)date {
     //TODO
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    appDelegate.selectedDate = [NSDate date];
+    NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
+    [formater setDateFormat:@"yyyyMMdd"];
+    NSString *curTime = [formater stringFromDate:date];
+    appDelegate.selectedDate = curTime;
 }
 
 @end

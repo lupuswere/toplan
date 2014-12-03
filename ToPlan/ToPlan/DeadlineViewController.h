@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DeadlineViewController : UIViewController
+- (IBAction)addTaskDeadlineButton:(UIButton *)sender;
 
 @end

@@ -30,9 +30,7 @@
 - (void)updateUserInterface {
     //TODO
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSString *str = [NSDateFormatter localizedStringFromDate:appDelegate.selectedDate
-                                                          dateStyle:NSDateFormatterShortStyle
-                                                          timeStyle:NSDateFormatterFullStyle];
+    NSString *str = appDelegate.selectedDate;
     self.forTest.text = str;
 }
 @end

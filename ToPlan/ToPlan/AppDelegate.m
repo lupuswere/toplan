@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TaskDeadlineTable.h"
 @interface AppDelegate ()
 
 @end
@@ -17,13 +17,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    _selectedDate = [NSDate date];
+    NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
+    NSDate *curDate = [NSDate date];
+    [formater setDateFormat:@"yyyyMMdd"];
+    NSString *curTime = [formater stringFromDate:curDate];
+    _selectedDate = curTime;
+    if (!(self.taskDeadlineTable = [NSKeyedUnarchiver unarchiveObjectWithFile:[self taskDeadlineTableStorageLocation]])) {
+        self.taskDeadlineTable = [[TaskDeadlineTable alloc] init];
+    }
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+}
+
+- (NSString *)applicationDocumentsFolderName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    NSParameterAssert(documentsDirectory);
+    return documentsDirectory;
+}
+- (NSString *)taskDeadlineTableStorageLocation
+{
+    return [[self applicationDocumentsFolderName] stringByAppendingPathComponent:@"taskDeadlineTable"];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
