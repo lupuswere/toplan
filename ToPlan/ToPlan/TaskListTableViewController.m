@@ -58,4 +58,10 @@
 //        destination.theObservation = selectedObservation;
 //    }
 }
+- (IBAction)Back:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        LogMethod();
+    }];
+}
 @end

@@ -101,7 +101,20 @@
                             <outlet property="delegate" destination="O8r-D1-0yH" id="7HF-wy-9Fv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gP5-Ht-8IO"/>
+                    <navigationItem key="navigationItem" id="gP5-Ht-8IO">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="9yW-60-oD6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C0t-0x-U5x">
+                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Back:" destination="O8r-D1-0yH" eventType="touchUpInside" id="R03-vv-Ekj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phj-bi-oVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
