@@ -20,6 +20,7 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.taskDeadlineTable = [appDelegate taskDeadlineTable];
+    self.selectedTaskIndex = -1;
     [self updateUI];
 }
 - (void) viewDidAppear:(BOOL)animated
@@ -28,7 +29,6 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     if ([segue.identifier isEqualToString:@"addTaskDeadline"]){
         TaskDeadlineEditViewController *destination = segue.destinationViewController;
         destination.theTaskDeadline = self.taskDeadlineTable.taskDeadlines[self.selectedTaskIndex];
@@ -37,6 +37,7 @@
 - (IBAction)addTaskDeadlineButton:(UIButton *)sender
 {
     [self.taskDeadlineTable addTaskDeadline];
+    self.selectedTaskIndex++;
 }
 
 - (void) updateUI
