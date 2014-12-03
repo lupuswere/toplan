@@ -13,9 +13,10 @@
     NSString *databasePath;
 }
 +(DBManager*)getSharedInstance;
--(BOOL)createDB;
--(BOOL) saveData :(NSDate*)planDate ptype:(NSString*)ptype
-      deadline:(NSDate*)deadline isdone:(Boolean*)isdone;
+-(BOOL)createPlanDB;
+-(BOOL)createTimeDB;
+-(BOOL) savePlanData :(NSInteger) pid pdate:(NSDate*)pdate ptype:(NSString*)ptype
+             deadline:(NSDate*)deadline isdone:(Boolean*)isdone;
 
--(NSArray*) findByplanid:(NSDate*)planDate;
+-(NSArray*) findBydateinPlan:(NSDate*)pdate;
 @end

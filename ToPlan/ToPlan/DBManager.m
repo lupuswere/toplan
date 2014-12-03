@@ -37,7 +37,42 @@ static sqlite3_stmt *statement = nil;
         if (sqlite3_open(dbpath, &database) == SQLITE_OK)
         {
             char *errMsg;
-            const char *sql_stmt ="create table if not exists planDetail (pdate date primary key, ptype text, deadline date,isdone blob)";
+            const char *sql_stmt ="create table if not exists planDetail (pid integer primary key autoincrement,pdate date , ptype text, deadline date,isdone blob)";
+            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg)
+                != SQLITE_OK)
+            {
+                isSuccess = NO;
+                NSLog(@"Failed to create table");
+            }
+            sqlite3_close(database);
+            return  isSuccess;
+        }
+        else {
+            isSuccess = NO;
+            NSLog(@"Failed to open/create database");
+        }
+    }
+    return isSuccess;
+}
+-(BOOL) createTimeDB{
+    NSString *docsDir;
+    NSArray *dirPaths;
+    // Get the documents directory
+    dirPaths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
+    // Build the path to the database file
+    databasePath = [[NSString alloc] initWithString:
+                    [docsDir stringByAppendingPathComponent: @"time.db"]];
+    BOOL isSuccess = YES;
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    if ([filemgr fileExistsAtPath: databasePath ] == NO)
+    {
+        const char *dbpath = [databasePath UTF8String];
+        if (sqlite3_open(dbpath, &database) == SQLITE_OK)
+        {
+            char *errMsg;
+            const char *sql_stmt ="create table if not exists timeDetail (tid integer primary key autoincrement,pdate date , pstart time, pend time)";
             if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg)
                 != SQLITE_OK)
             {
@@ -55,13 +90,13 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
-- (BOOL) saveData:(NSDate*)planDate ptype:(NSString*)ptype
+- (BOOL) savePlanData:(NSInteger) pid pdate:(NSDate*)pdate ptype:(NSString*)ptype
          deadline:(NSDate*)deadline isdone:(Boolean*)isdone;
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into planDetail (pdate,ptype, deadline, isdone) values (\"%@\",\"%@\", \"%@\", \"%s\")",planDate,
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into planDetail (pid,pdate,ptype, deadline, isdone) values (\"%ld\",\"%@\", \"%@\", \"%@\")",(long)pid,pdate,
                                ptype, deadline, isdone];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
@@ -77,12 +112,12 @@ static sqlite3_stmt *statement = nil;
     return NO;
 }
 
-- (NSArray*) findByplanid:(NSDate*)planDate
+- (NSArray*) findBydateinPlan:(NSDate *)pdate:(NSDate*)pdate
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat: @"select ptype, deadline, isdone from planDetail where pdate=\"%@\"",planDate];
+        NSString *querySQL = [NSString stringWithFormat: @"select ptype, deadline, isdone from planDetail where pdate=\"%@\"",pdate];
         const char *query_stmt = [querySQL UTF8String];
         NSMutableArray *resultArray = [[NSMutableArray alloc]init];
         if (sqlite3_prepare_v2(database,
