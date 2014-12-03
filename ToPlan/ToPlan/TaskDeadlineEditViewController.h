@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *picker;
 @property (weak, nonatomic) IBOutlet UITextField *taskTypeTextField;
 - (IBAction)added:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 @end

@@ -11,6 +11,7 @@
 #import "TaskDeadline.h"
 #import "TaskDeadlineTable.h"
 #import "loggingMacros.h"
+#import "TaskDeadlineEditViewController.h"
 @interface TaskListTableViewController()
 @property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
 @end
@@ -37,26 +38,46 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.taskDeadlineTable.taskDeadlines.count;
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSString *str = appDelegate.selectedDate;
+    int count = 0;
+    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
+    {
+        if([str isEqualToString:task.date])
+        {
+            count = count + 1;
+        }
+    }
+    return (NSInteger)count;
+    //return self.taskDeadlineTable.taskDeadlines.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSString *str = appDelegate.selectedDate;
     MyLog(@"section %zd row %zd", indexPath.section, indexPath.row);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskDeadlineCell" forIndexPath:indexPath];
     TaskDeadline *thisTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
-    cell.textLabel.text = thisTaskDeadline.taskName;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", thisTaskDeadline.date];
+    if([str isEqualToString:thisTaskDeadline.date])
+    {
+        cell.textLabel.text = thisTaskDeadline.taskName;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", thisTaskDeadline.deadlineTime];
+        if(thisTaskDeadline.finished)
+        {
+            [cell setBackgroundColor:[UIColor colorWithRed:.2 green:.8 blue:.2 alpha:1]];
+            cell.textLabel.textColor = [UIColor whiteColor];
+        }
+    }
     return cell;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    if([segue.identifier isEqualToString:@"editObservationFromTable"])
-//    {
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//        Observation *selectedObservation = self.survey.observations[indexPath.row];
-//        ObservationEditorViewController *destination = segue.destinationViewController;
-//        destination.theObservation = selectedObservation;
-//    }
+    if ([segue.identifier isEqualToString:@"editTaskDeadline"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        TaskDeadline *selectedTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
+        TaskDeadlineEditViewController *destination = segue.destinationViewController;
+        destination.theTaskDeadline = selectedTaskDeadline;
+    }
 }
 - (IBAction)Back:(id)sender
 {
