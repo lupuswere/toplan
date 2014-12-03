@@ -78,7 +78,7 @@
 {
     if ([segue.identifier isEqualToString:@"editTaskDeadline"]){
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        TaskDeadline *selectedTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
+        TaskDeadline *selectedTaskDeadline = self.currentTaskDeadlines[indexPath.row];
         TaskDeadlineEditViewController *destination = segue.destinationViewController;
         destination.theTaskDeadline = selectedTaskDeadline;
     }
