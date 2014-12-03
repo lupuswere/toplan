@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */; };
+		9C488F141A2EC68500215818 /* TaskRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F131A2EC68500215818 /* TaskRecord.m */; };
+		9C488F171A2EC69400215818 /* TaskDeadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F161A2EC69400215818 /* TaskDeadline.m */; };
 		9C6AE72E1A15C00900C4790E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE72D1A15C00900C4790E /* main.m */; };
 		9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7301A15C00900C4790E /* AppDelegate.m */; };
 		9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7331A15C00900C4790E /* CalendarViewController.m */; };
@@ -40,6 +42,10 @@
 /* Begin PBXFileReference section */
 		9C419CCD1A2452A600369BE7 /* DeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineViewController.h; sourceTree = "<group>"; };
 		9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineViewController.m; sourceTree = "<group>"; };
+		9C488F121A2EC68500215818 /* TaskRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskRecord.h; sourceTree = "<group>"; };
+		9C488F131A2EC68500215818 /* TaskRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskRecord.m; sourceTree = "<group>"; };
+		9C488F151A2EC69400215818 /* TaskDeadline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDeadline.h; sourceTree = "<group>"; };
+		9C488F161A2EC69400215818 /* TaskDeadline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDeadline.m; sourceTree = "<group>"; };
 		9C6AE7281A15C00900C4790E /* ToPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6AE72C1A15C00900C4790E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C6AE72D1A15C00900C4790E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C488F181A2EC69D00215818 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C488F121A2EC68500215818 /* TaskRecord.h */,
+				9C488F131A2EC68500215818 /* TaskRecord.m */,
+				9C488F151A2EC69400215818 /* TaskDeadline.h */,
+				9C488F161A2EC69400215818 /* TaskDeadline.m */,
+			);
+			name = "Data Models";
+			sourceTree = "<group>";
+		};
 		9C6AE71F1A15C00900C4790E = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +147,7 @@
 				9C6AE73B1A15C00900C4790E /* Images.xcassets */,
 				9C6AE73D1A15C00900C4790E /* LaunchScreen.xib */,
 				9C6AE72B1A15C00900C4790E /* Supporting Files */,
+				9C488F181A2EC69D00215818 /* Data Models */,
 			);
 			path = ToPlan;
 			sourceTree = "<group>";
@@ -276,8 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DBEF09B1A2D6A760002236A /* DBManager.m in Sources */,
+				9C488F141A2EC68500215818 /* TaskRecord.m in Sources */,
 				9C6AE75B1A15C21B00C4790E /* CKCalendarView.m in Sources */,
 				9C6AE7371A15C00900C4790E /* RecordViewController.m in Sources */,
+				9C488F171A2EC69400215818 /* TaskDeadline.m in Sources */,
 				9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */,
 				9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */,
 				9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */,
