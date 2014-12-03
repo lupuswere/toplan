@@ -10,4 +10,5 @@
 
 @interface TaskDeadlineTable : NSObject
 @property (strong, nonatomic) NSMutableArray *taskDeadlines;
+- (void) addTaskDeadline;
 @end

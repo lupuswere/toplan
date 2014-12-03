@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class TaskDeadlineTable;
 @interface DeadlineViewController : UIViewController
 - (IBAction)addTaskDeadlineButton:(UIButton *)sender;
-
+@property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
 @end
