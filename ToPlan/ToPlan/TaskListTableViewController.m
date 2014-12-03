@@ -14,6 +14,7 @@
 #import "TaskDeadlineEditViewController.h"
 @interface TaskListTableViewController()
 @property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
+@property (strong, nonatomic) NSMutableArray *currentTaskDeadlines;
 @end
 
 @implementation TaskListTableViewController
@@ -22,9 +23,11 @@
     [super viewDidLoad];
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.taskDeadlineTable = [appDelegate taskDeadlineTable];
+    [self reBuildArray];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self reBuildArray];
     [self.tableView reloadData];
     [self.tableView setNeedsDisplay];
 }
@@ -38,36 +41,37 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSString *str = appDelegate.selectedDate;
-    int count = 0;
-    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
-    {
-        if([str isEqualToString:task.date])
-        {
-            count = count + 1;
-        }
-    }
-    return (NSInteger)count;
-    //return self.taskDeadlineTable.taskDeadlines.count;
+//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    NSString *str = appDelegate.selectedDate;
+//    int count = 0;
+//    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
+//    {
+//        if([str isEqualToString:task.date])
+//        {
+//            count = count + 1;
+//        }
+//    }
+//    return (NSInteger)count;
+    return self.currentTaskDeadlines.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSString *str = appDelegate.selectedDate;
-    MyLog(@"section %zd row %zd", indexPath.section, indexPath.row);
+    //AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    //NSString *str = appDelegate.selectedDate;
+    //MyLog(@"section %zd row %zd", indexPath.section, indexPath.row);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskDeadlineCell" forIndexPath:indexPath];
-    TaskDeadline *thisTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
-    if([str isEqualToString:thisTaskDeadline.date])
-    {
+    TaskDeadline *thisTaskDeadline = self.currentTaskDeadlines[indexPath.row];
+    //if([str isEqualToString:thisTaskDeadline.date])
+    //{
         cell.textLabel.text = thisTaskDeadline.taskName;
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", thisTaskDeadline.deadlineTime];
         if(thisTaskDeadline.finished)
         {
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", thisTaskDeadline.taskName, @"(finished)"];
             [cell setBackgroundColor:[UIColor colorWithRed:.2 green:.8 blue:.2 alpha:1]];
             cell.textLabel.textColor = [UIColor whiteColor];
         }
-    }
+    //}
     return cell;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -84,5 +88,18 @@
     [self dismissViewControllerAnimated:YES completion:^{
         LogMethod();
     }];
+}
+- (void)reBuildArray
+{
+    self.currentTaskDeadlines = [[NSMutableArray alloc] init];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSString *str = appDelegate.selectedDate;
+    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
+    {
+        if([str isEqualToString:task.date])
+        {
+            [self.currentTaskDeadlines addObject:task];
+        }
+    }
 }
 @end

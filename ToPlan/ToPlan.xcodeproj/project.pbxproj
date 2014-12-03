@@ -13,6 +13,7 @@
 		9C488F1B1A2ECB0000215818 /* TaskDeadlineTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F1A1A2ECB0000215818 /* TaskDeadlineTable.m */; };
 		9C488F1E1A2ED82900215818 /* TaskDeadlineEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F1D1A2ED82900215818 /* TaskDeadlineEditViewController.m */; };
 		9C488F221A2EE15300215818 /* TaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F211A2EE15300215818 /* TaskListTableViewController.m */; };
+		9C488F281A2F185E00215818 /* TaskRecordTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F271A2F185E00215818 /* TaskRecordTable.m */; };
 		9C6AE72E1A15C00900C4790E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE72D1A15C00900C4790E /* main.m */; };
 		9C6AE7311A15C00900C4790E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7301A15C00900C4790E /* AppDelegate.m */; };
 		9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AE7331A15C00900C4790E /* CalendarViewController.m */; };
@@ -56,6 +57,8 @@
 		9C488F1F1A2EDD8F00215818 /* loggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loggingMacros.h; sourceTree = "<group>"; };
 		9C488F201A2EE15300215818 /* TaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewController.h; sourceTree = "<group>"; };
 		9C488F211A2EE15300215818 /* TaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewController.m; sourceTree = "<group>"; };
+		9C488F261A2F185E00215818 /* TaskRecordTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskRecordTable.h; sourceTree = "<group>"; };
+		9C488F271A2F185E00215818 /* TaskRecordTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskRecordTable.m; sourceTree = "<group>"; };
 		9C6AE7281A15C00900C4790E /* ToPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6AE72C1A15C00900C4790E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C6AE72D1A15C00900C4790E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 			children = (
 				9C488F121A2EC68500215818 /* TaskRecord.h */,
 				9C488F131A2EC68500215818 /* TaskRecord.m */,
+				9C488F261A2F185E00215818 /* TaskRecordTable.h */,
+				9C488F271A2F185E00215818 /* TaskRecordTable.m */,
 				9C488F151A2EC69400215818 /* TaskDeadline.h */,
 				9C488F161A2EC69400215818 /* TaskDeadline.m */,
 				9C488F191A2ECB0000215818 /* TaskDeadlineTable.h */,
@@ -311,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DBEF09B1A2D6A760002236A /* DBManager.m in Sources */,
+				9C488F281A2F185E00215818 /* TaskRecordTable.m in Sources */,
 				9C488F141A2EC68500215818 /* TaskRecord.m in Sources */,
 				9C488F221A2EE15300215818 /* TaskListTableViewController.m in Sources */,
 				9C6AE75B1A15C21B00C4790E /* CKCalendarView.m in Sources */,

@@ -7,20 +7,22 @@
 //
 
 #import "TaskDeadline.h"
-
+#import "AppDelegate.h"
 @implementation TaskDeadline
 - (id)init
 {
     if (self = [super init]) {
         NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
-        NSDate *curDate = [NSDate date];
-        [formater setDateFormat:@"yyyyMMdd"];
-        NSString *curTime = [formater stringFromDate:curDate];
         //Format ID
-        _date = curTime;
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSString *str = appDelegate.selectedDate;
+        [formater setDateFormat:@"yyyyMMdd"];
+        NSDate *dateFromString = [[NSDate alloc] init];
+        dateFromString = [formater dateFromString:str];
+        _date = str;
         _taskType = @"";
         _taskName = @"New Name";
-        _deadlineTime = curDate;
+        _deadlineTime = dateFromString;
         _finished = false;
     }
     return self;

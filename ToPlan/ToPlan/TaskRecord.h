@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface TaskRecord : NSObject
-@property (strong, nonatomic) NSDate *date;
-@property (strong, nonatomic) NSString *taskType;
-@property (strong, nonatomic) NSString *taskName;
-@property (strong, nonatomic) NSDate *start;
-@property (strong, nonatomic) NSDate *end;
+@property (strong, nonatomic) NSString *dateRecord;
+@property (strong, nonatomic) NSString *taskTypeRecord;
+@property (strong, nonatomic) NSString *taskNameRecord;
+@property (strong, nonatomic) NSDate *startRecord;
+@property (strong, nonatomic) NSDate *endRecord;
 
 @end
