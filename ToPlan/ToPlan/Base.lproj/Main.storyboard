@@ -52,7 +52,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="O8r-D1-0yH" kind="showDetail" identifier="showTaskList" id="Fd8-EI-TZg"/>
+                                    <segue destination="1Gy-cM-tKn" kind="showDetail" identifier="showTaskList" id="PsP-gr-ufQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,6 +63,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6T-1w-O6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73" y="916"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sea-Zl-A3E">
+            <objects>
+                <navigationController id="1Gy-cM-tKn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hg3-eW-zzl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="O8r-D1-0yH" kind="relationship" relationship="rootViewController" id="Leg-1w-29q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWh-oh-CSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-479" y="1625"/>
         </scene>
         <!--Task List Table View Controller-->
         <scene sceneID="NeI-Ap-sun">
@@ -85,10 +101,11 @@
                             <outlet property="delegate" destination="O8r-D1-0yH" id="7HF-wy-9Fv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="gP5-Ht-8IO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phj-bi-oVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="1880"/>
+            <point key="canvasLocation" x="113" y="2262"/>
         </scene>
         <!--Task Deadline Edit View Controller-->
         <scene sceneID="bz0-pZ-Iwu">
