@@ -20,7 +20,16 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.taskDeadlineTable = [appDelegate taskDeadlineTable];
-    self.selectedTaskIndex = -1;
+//    self.selectedTaskIndex = -1;
+//    NSString *str = appDelegate.selectedDate;
+//    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
+//    {
+//        if([str isEqualToString:task.date])
+//        {
+//            self.selectedTaskIndex++;
+//        }
+//    }
+    
     [self updateUI];
 }
 - (void) viewDidAppear:(BOOL)animated
@@ -31,17 +40,18 @@
 {
     if ([segue.identifier isEqualToString:@"addTaskDeadline"]){
         TaskDeadlineEditViewController *destination = segue.destinationViewController;
-        destination.theTaskDeadline = self.taskDeadlineTable.taskDeadlines[self.selectedTaskIndex];
+        destination.theTaskDeadline = [self.taskDeadlineTable.taskDeadlines lastObject];
     }
 }
 - (IBAction)addTaskDeadlineButton:(UIButton *)sender
 {
     [self.taskDeadlineTable addTaskDeadline];
-    self.selectedTaskIndex++;
+    //self.selectedTaskIndex++;
 }
 
 - (void) updateUI
 {
    
 }
+
 @end
