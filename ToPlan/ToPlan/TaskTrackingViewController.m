@@ -17,4 +17,22 @@
         destination.theTaskDeadline = self.theTaskDeadline;
     }
 }
+- (IBAction)getBeginTimeButton:(UIButton *)sender {
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"MMdd hh:mm"];
+    self.startTimeLabel.text = [DateFormatter stringFromDate:[NSDate date]];
+}
+
+- (IBAction)getEndTimeButton:(UIButton *)sender {
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"MMdd hh:mm"];
+    self.endTimeLabel.text = [DateFormatter stringFromDate:[NSDate date]];
+    
+    // Get time difference
+    NSDate *date1 = [DateFormatter dateFromString:self.startTimeLabel.text];
+    NSDate *date2 = [DateFormatter dateFromString:self.endTimeLabel.text];
+    NSTimeInterval timeDifference = [date2 timeIntervalSinceDate:date1]/60;
+    NSString *timeDiff = [@(timeDifference) stringValue];
+    self.timeDifferenceLabel.text = [NSString stringWithFormat:@"%@ %@", timeDiff, @"min"];
+}
 @end
