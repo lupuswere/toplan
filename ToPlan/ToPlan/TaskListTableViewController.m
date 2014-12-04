@@ -65,7 +65,10 @@
     //if([str isEqualToString:thisTaskDeadline.date])
     //{
         cell.textLabel.text = thisTaskDeadline.taskName;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", thisTaskDeadline.deadlineTime];
+        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+        [DateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    cell.detailTextLabel.text = [DateFormatter stringFromDate:thisTaskDeadline.deadlineTime];
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", thisTaskDeadline.deadlineTime];
         if(thisTaskDeadline.finished)
         {
             cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", thisTaskDeadline.taskName, @"(finished)"];
@@ -91,7 +94,7 @@
 {
     if ([segue.identifier isEqualToString:@"editTaskDeadline"]){
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        TaskDeadline *selectedTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
+        TaskDeadline *selectedTaskDeadline = self.currentTaskDeadlines[indexPath.row];
         TaskTrackingViewController *destination = segue.destinationViewController;
         destination.theTaskDeadline = selectedTaskDeadline;
     }
