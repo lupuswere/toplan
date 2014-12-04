@@ -11,6 +11,7 @@
 #import "TaskDeadline.h"
 #import "TaskDeadlineTable.h"
 #import "loggingMacros.h"
+#import "TaskTrackingViewController.h"
 #import "TaskDeadlineEditViewController.h"
 @interface TaskListTableViewController()
 @property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
@@ -90,11 +91,12 @@
 {
     if ([segue.identifier isEqualToString:@"editTaskDeadline"]){
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        TaskDeadline *selectedTaskDeadline = self.currentTaskDeadlines[indexPath.row];
-        TaskDeadlineEditViewController *destination = segue.destinationViewController;
+        TaskDeadline *selectedTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
+        TaskTrackingViewController *destination = segue.destinationViewController;
         destination.theTaskDeadline = selectedTaskDeadline;
     }
 }
+
 - (IBAction)Back:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:^{

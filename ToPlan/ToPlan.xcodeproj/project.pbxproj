@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2842CB761A2FF2DF004CA265 /* TaskTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2842CB751A2FF2DF004CA265 /* TaskTrackingViewController.m */; };
 		9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */; };
 		9C488F141A2EC68500215818 /* TaskRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F131A2EC68500215818 /* TaskRecord.m */; };
 		9C488F171A2EC69400215818 /* TaskDeadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C488F161A2EC69400215818 /* TaskDeadline.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2842CB741A2FF2DF004CA265 /* TaskTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTrackingViewController.h; sourceTree = "<group>"; };
+		2842CB751A2FF2DF004CA265 /* TaskTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTrackingViewController.m; sourceTree = "<group>"; };
 		9C419CCD1A2452A600369BE7 /* DeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineViewController.h; sourceTree = "<group>"; };
 		9C419CCE1A2452A600369BE7 /* DeadlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineViewController.m; sourceTree = "<group>"; };
 		9C488F121A2EC68500215818 /* TaskRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskRecord.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				9C488F1D1A2ED82900215818 /* TaskDeadlineEditViewController.m */,
 				9C488F201A2EE15300215818 /* TaskListTableViewController.h */,
 				9C488F211A2EE15300215818 /* TaskListTableViewController.m */,
+				2842CB741A2FF2DF004CA265 /* TaskTrackingViewController.h */,
+				2842CB751A2FF2DF004CA265 /* TaskTrackingViewController.m */,
 				9C6AE7381A15C00900C4790E /* Main.storyboard */,
 				9C6AE73B1A15C00900C4790E /* Images.xcassets */,
 				9C6AE73D1A15C00900C4790E /* LaunchScreen.xib */,
@@ -327,6 +332,7 @@
 				9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */,
 				9C6AE72E1A15C00900C4790E /* main.m in Sources */,
 				9C488F1E1A2ED82900215818 /* TaskDeadlineEditViewController.m in Sources */,
+				2842CB761A2FF2DF004CA265 /* TaskTrackingViewController.m in Sources */,
 				9C488F1B1A2ECB0000215818 /* TaskDeadlineTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
