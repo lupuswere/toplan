@@ -14,4 +14,6 @@
 @property (strong, nonatomic) NSString *taskName;
 @property (strong, nonatomic) NSDate *deadlineTime;
 @property BOOL finished;
+@property BOOL overdue;
+
 @end

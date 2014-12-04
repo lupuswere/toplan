@@ -24,6 +24,7 @@
         _taskName = @"New Name";
         _deadlineTime = dateFromString;
         _finished = false;
+        _overdue=false;
     }
     return self;
 }
@@ -34,6 +35,7 @@
     [encoder encodeObject:self.taskName forKey:@"taskName"];
     [encoder encodeObject:self.deadlineTime forKey:@"deadlineTime"];
     [encoder encodeBool:self.finished forKey:@"finished"];
+    [encoder encodeBool:self.overdue forKey:@"overdue"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -44,6 +46,7 @@
         _taskName = [decoder decodeObjectForKey:@"taskName"];
         _deadlineTime = [decoder decodeObjectForKey:@"deadlineTime"];
         _finished = [decoder decodeBoolForKey:@"finished"];
+        _overdue = [decoder decodeBoolForKey:@"oerdue"];
     }
     return self;
 }

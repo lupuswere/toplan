@@ -35,6 +35,8 @@
     [self dismissViewControllerAnimated:YES completion:^{
         LogMethod();
     }];
+    
+    
     switch(self.segmentControl.selectedSegmentIndex)
     {
         case 0:
