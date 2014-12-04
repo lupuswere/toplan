@@ -75,7 +75,7 @@
     
     
     //if a task is overdue, make it orange
-    if([thisTaskDeadline.deadlineTime compare:[NSDate date]] == NSOrderedAscending){
+    else if([thisTaskDeadline.deadlineTime compare:[NSDate date]] == NSOrderedAscending){
                 thisTaskDeadline.overdue=true;
         
                 cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", thisTaskDeadline.taskName, @"(overdue)"];

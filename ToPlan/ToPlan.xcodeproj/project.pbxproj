@@ -30,6 +30,7 @@
 		9C6AE75F1A15C21B00C4790E /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6AE75A1A15C21B00C4790E /* right_arrow@2x.png */; };
 		9C6AE7611A15C24900C4790E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6AE7601A15C24900C4790E /* QuartzCore.framework */; };
 		9C6AE7631A15C25000C4790E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6AE7621A15C25000C4790E /* CoreGraphics.framework */; };
+		9D8C2DF31A2FF71700A030F2 /* AllTaksListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C2DF21A2FF71700A030F2 /* AllTaksListTableViewController.m */; };
 		9DBEF09B1A2D6A760002236A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBEF09A1A2D6A760002236A /* DBManager.m */; };
 		9DBEF09D1A2D71A40002236A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBEF09C1A2D71A40002236A /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,8 @@
 		9C6AE75A1A15C21B00C4790E /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 		9C6AE7601A15C24900C4790E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C6AE7621A15C25000C4790E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9D8C2DF11A2FF71700A030F2 /* AllTaksListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTaksListTableViewController.h; sourceTree = "<group>"; };
+		9D8C2DF21A2FF71700A030F2 /* AllTaksListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTaksListTableViewController.m; sourceTree = "<group>"; };
 		9DBEF0991A2D6A760002236A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		9DBEF09A1A2D6A760002236A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		9DBEF09C1A2D71A40002236A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -160,6 +163,8 @@
 				9C6AE7561A15C21B00C4790E /* resources */,
 				9C6AE7321A15C00900C4790E /* CalendarViewController.h */,
 				9C6AE7331A15C00900C4790E /* CalendarViewController.m */,
+				9D8C2DF11A2FF71700A030F2 /* AllTaksListTableViewController.h */,
+				9D8C2DF21A2FF71700A030F2 /* AllTaksListTableViewController.m */,
 				9C6AE7351A15C00900C4790E /* RecordViewController.h */,
 				9C6AE7361A15C00900C4790E /* RecordViewController.m */,
 				9C419CCD1A2452A600369BE7 /* DeadlineViewController.h */,
@@ -331,6 +336,7 @@
 				9C6AE7341A15C00900C4790E /* CalendarViewController.m in Sources */,
 				9C419CCF1A2452A600369BE7 /* DeadlineViewController.m in Sources */,
 				9C6AE72E1A15C00900C4790E /* main.m in Sources */,
+				9D8C2DF31A2FF71700A030F2 /* AllTaksListTableViewController.m in Sources */,
 				9C488F1E1A2ED82900215818 /* TaskDeadlineEditViewController.m in Sources */,
 				2842CB761A2FF2DF004CA265 /* TaskTrackingViewController.m in Sources */,
 				9C488F1B1A2ECB0000215818 /* TaskDeadlineTable.m in Sources */,
