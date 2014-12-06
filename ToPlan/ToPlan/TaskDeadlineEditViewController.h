@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TaskDeadline.h"
+#import "TaskDeadlineTable.h"
+
 @class TaskDeadline;
 @interface TaskDeadlineEditViewController : UIViewController
 @property (strong, nonatomic) TaskDeadline *theTaskDeadline;

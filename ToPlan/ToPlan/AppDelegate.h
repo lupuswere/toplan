@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class TaskDeadlineTable;
+@class TaskRecordTable;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *selectedDate;
 @property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
+@property (strong, nonatomic) TaskRecordTable *taskRecordTable;
 @end
 

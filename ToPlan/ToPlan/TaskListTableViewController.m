@@ -10,11 +10,14 @@
 #import "AppDelegate.h"
 #import "TaskDeadline.h"
 #import "TaskDeadlineTable.h"
+#import "TaskRecordTable.h"
+#import "TaskRecord.h"
 #import "loggingMacros.h"
 #import "TaskTrackingViewController.h"
 #import "TaskDeadlineEditViewController.h"
 @interface TaskListTableViewController()
 @property (strong, nonatomic) TaskDeadlineTable *taskDeadlineTable;
+@property (strong, nonatomic) TaskRecordTable *taskRecordTable;
 @property (strong, nonatomic) NSMutableArray *currentTaskDeadlines;
 @end
 
@@ -57,6 +60,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //[self.taskRecordTable addTaskRecord];
     //AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     //NSString *str = appDelegate.selectedDate;
     //MyLog(@"section %zd row %zd", indexPath.section, indexPath.row);

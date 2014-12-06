@@ -8,6 +8,7 @@
 
 #import "TaskDeadlineEditViewController.h"
 #import "loggingMacros.h"
+#import "TaskDeadLine.h"
 @implementation TaskDeadlineEditViewController
 - (void) viewDidLoad
 {
@@ -48,5 +49,13 @@
         default:
             break;
     }
+    
+    [self recommandation];
 }
+
+- (void)recommandation
+{
+    
+}
+        
 @end

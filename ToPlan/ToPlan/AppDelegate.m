@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TaskDeadlineTable.h"
+#import "TaskRecordTable.h"
 @interface AppDelegate ()
 
 @end
@@ -24,6 +25,9 @@
     _selectedDate = curTime;
     if (!(self.taskDeadlineTable = [NSKeyedUnarchiver unarchiveObjectWithFile:[self taskDeadlineTableStorageLocation]])) {
         self.taskDeadlineTable = [[TaskDeadlineTable alloc] init];
+    }
+    if (!(self.taskRecordTable = [NSKeyedUnarchiver unarchiveObjectWithFile:[self taskRecordTableStorageLocation]])) {
+        self.taskRecordTable = [[TaskRecordTable alloc] init];
     }
     return YES;
 }
@@ -45,10 +49,16 @@
     return [[self applicationDocumentsFolderName] stringByAppendingPathComponent:@"taskDeadlineTable"];
 }
 
+- (NSString *)taskRecordTableStorageLocation
+{
+    return[[self applicationDocumentsFolderName]stringByAppendingPathComponent:@"taskRecordTable"];
+}
+
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [NSKeyedArchiver archiveRootObject:self.taskDeadlineTable toFile:[self taskDeadlineTableStorageLocation]];
+    [NSKeyedArchiver archiveRootObject:self.taskRecordTable toFile:[self taskRecordTableStorageLocation]];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

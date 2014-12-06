@@ -7,6 +7,7 @@
 //
 
 #import "TaskRecord.h"
+#import "AppDelegate.h"
 
 @implementation TaskRecord
 - (id)init
