@@ -99,4 +99,16 @@
         LogMethod();
     }];
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [_allTaskDeadlines removeObjectAtIndex:indexPath.row];
+        [self.taskDeadlineTable removeTaskDeadlinesAtIndexes:indexPath.row];
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    [tableView reloadData];
+}
 @end

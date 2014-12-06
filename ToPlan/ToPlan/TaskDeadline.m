@@ -46,7 +46,7 @@
         _taskName = [decoder decodeObjectForKey:@"taskName"];
         _deadlineTime = [decoder decodeObjectForKey:@"deadlineTime"];
         _finished = [decoder decodeBoolForKey:@"finished"];
-        _overdue = [decoder decodeBoolForKey:@"oerdue"];
+        _overdue = [decoder decodeBoolForKey:@"overdue"];
     }
     return self;
 }
