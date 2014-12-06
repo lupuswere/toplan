@@ -20,6 +20,17 @@
 {
     [self.taskDeadlines addObject:[[TaskDeadline alloc] init]];
 }
+
+-(void) removeTaskDeadlinesAtIndexes:(NSInteger) index{
+    //if(self.taskDeadlines){
+        [self.taskDeadlines removeObjectAtIndex:index];
+    //}
+
+}
+
+
+
+
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:self.taskDeadlines forKey:@"taskDeadlines"];

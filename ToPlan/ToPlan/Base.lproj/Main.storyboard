@@ -465,7 +465,7 @@
         <image name="start" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yl7-zg-O7Q"/>
         <segue reference="5bP-KK-6gL"/>
+        <segue reference="Bto-oR-2fR"/>
     </inferredMetricsTieBreakers>
 </document>
