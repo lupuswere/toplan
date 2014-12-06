@@ -127,6 +127,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         [_currentTaskDeadlines removeObjectAtIndex:indexPath.row];
+        [self.taskDeadlineTable removeTaskDeadlinesAtIndexes:indexPath.row];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
