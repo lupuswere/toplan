@@ -31,8 +31,6 @@
     [DateFormatter setDateFormat:@"MMdd hh:mm"];
     [self.taskRecordTable addTaskRecord];
     self.theTaskRecord = [self.taskRecordTable.taskRecords lastObject];
-    //self.theTaskRecord.startRecord = [NSDate date];
-//    self.startTimeLabel.text = [DateFormatter stringFromDate:[NSDate date]];
     self.startTimeLabel.text = [DateFormatter stringFromDate:self.theTaskRecord.startRecord];
 }
 
