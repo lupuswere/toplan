@@ -48,6 +48,13 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    NSSortDescriptor * sortByDeadlineDate = [NSSortDescriptor sortDescriptorWithKey:@"deadlineTime" ascending:YES];
+//    [self.taskDeadlineTable.taskDeadlines sortUsingDescriptors:[NSArray arrayWithObject:sortByDeadlineDate]];
+//    NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"deadlineTime" ascending:YES];
+//    NSArray *sortDescriptors = [NSArray arrayWithObject: sortByDate];
+//    NSMutableArray *sortedEventArray = [self.taskDeadlineTable.taskDeadlines sortUsingDescriptors: sortDescriptors];
+//    self.taskDeadlineTable.taskDeadlines = sortedEventArray;
+
     //AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     //NSString *str = appDelegate.selectedDate;
     //MyLog(@"section %zd row %zd", indexPath.section, indexPath.row);
@@ -82,6 +89,8 @@
 
 - (void)reBuildArray
 {
+    NSSortDescriptor * sortByDeadlineDate = [NSSortDescriptor sortDescriptorWithKey:@"deadlineTime" ascending:YES];
+    [self.taskDeadlineTable.taskDeadlines sortUsingDescriptors:[NSArray arrayWithObject:sortByDeadlineDate]];
     self.allTaskDeadlines = [[NSMutableArray alloc] init];
     //AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     //NSString *str = appDelegate.selectedDate;
