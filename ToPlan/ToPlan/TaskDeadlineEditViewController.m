@@ -7,11 +7,14 @@
 //
 
 #import "TaskDeadlineEditViewController.h"
+#import "AppDelegate.h"
 #import "loggingMacros.h"
 #import "TaskDeadLine.h"
 @implementation TaskDeadlineEditViewController
 - (void) viewDidLoad
 {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.taskRecordTable = [appDelegate taskRecordTable];
     self.taskNameTextField.text = self.theTaskDeadline.taskName;
     self.picker.date = self.theTaskDeadline.deadlineTime;
     self.taskTypeTextField.text = self.theTaskDeadline.taskType;
@@ -49,13 +52,35 @@
         default:
             break;
     }
-    
-    [self recommandation];
-}
-
-- (void)recommandation
-{
-    
 }
         
+- (IBAction)getAdviceButton:(id)sender
+{
+    NSString *enteredText = [self.taskTypeTextField text];
+    if(![enteredText isEqualToString:@""] && self.taskRecordTable.taskRecords.count!=0)
+    {
+        NSNumber *totalTimeUsing = 0;
+        NSInteger count = 0;
+        for(TaskRecord *tr in self.taskRecordTable.taskRecords)
+        {
+            if ([tr.taskTypeRecord isEqualToString: enteredText])
+            {
+                count++;
+                totalTimeUsing = [NSNumber numberWithDouble:(totalTimeUsing.doubleValue + tr.timeUsing.doubleValue)];
+            }
+        }
+        if(count == 0)
+        {
+            self.adviceLabel.text = @"You don't have record of this type.";
+        }
+        else{
+            NSNumber *averageUsing = [NSNumber numberWithDouble:(totalTimeUsing.doubleValue/count)];
+            NSString *advice = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", @"For task type", enteredText, @",do", averageUsing.stringValue, @"mins each time."];
+            self.adviceLabel.text = advice;
+        }
+    }
+    else{
+        self.adviceLabel.text = @"You don't have record of this type.";
+    }
+}
 @end

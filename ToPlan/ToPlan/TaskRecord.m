@@ -23,6 +23,7 @@
         _taskNameRecord = @"New Name";
         _startRecord = curDate;
         _endRecord = curDate;
+        _timeUsing = 0;
     }
     return self;
 }

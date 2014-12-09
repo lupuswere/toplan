@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString *taskNameRecord;
 @property (strong, nonatomic) NSDate *startRecord;
 @property (strong, nonatomic) NSDate *endRecord;
+@property (strong, nonatomic) NSNumber *timeUsing;
 
 @end

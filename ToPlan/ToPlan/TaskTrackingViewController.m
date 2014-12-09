@@ -31,21 +31,20 @@
     [DateFormatter setDateFormat:@"MMdd hh:mm"];
     [self.taskRecordTable addTaskRecord];
     self.theTaskRecord = [self.taskRecordTable.taskRecords lastObject];
-    //self.theTaskRecord.startRecord = [NSDate date];
-//    self.startTimeLabel.text = [DateFormatter stringFromDate:[NSDate date]];
     self.startTimeLabel.text = [DateFormatter stringFromDate:self.theTaskRecord.startRecord];
 }
 
 - (IBAction)getEndTimeButton:(UIButton *)sender {
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
     [DateFormatter setDateFormat:@"MMdd hh:mm"];
-    self.endTimeLabel.text = [DateFormatter stringFromDate:[NSDate date]];
-    self.theTaskRecord.endRecord = [DateFormatter dateFromString:self.endTimeLabel.text];
+    self.theTaskRecord.endRecord = [NSDate date];
+    self.endTimeLabel.text = [DateFormatter stringFromDate:self.theTaskRecord.endRecord];
     
     // Get time difference
     NSDate *date1 = [DateFormatter dateFromString:self.startTimeLabel.text];
     NSDate *date2 = [DateFormatter dateFromString:self.endTimeLabel.text];
     NSTimeInterval timeDifference = [date2 timeIntervalSinceDate:date1]/60;
+    self.theTaskRecord.timeUsing = [NSNumber numberWithDouble: [date2 timeIntervalSinceDate:date1]/60];
     NSString *timeDiff = [@(timeDifference) stringValue];
     self.timeDifferenceLabel.text = [NSString stringWithFormat:@"%@ %@", timeDiff, @"min"];
     
