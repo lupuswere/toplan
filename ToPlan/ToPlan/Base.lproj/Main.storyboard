@@ -378,11 +378,18 @@
                                     <action selector="getEndTimeButton:" destination="6zT-8W-tUz" eventType="touchUpInside" id="e4C-QV-bGX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAm-x9-0n5">
+                                <rect key="frame" x="61" y="194" width="221" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95404404170000001" green="1" blue="0.87742207959999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="endTimeLabel" destination="05M-6x-9ky" id="RO9-NT-hMl"/>
+                        <outlet property="remainingLabel" destination="QAm-x9-0n5" id="5iX-ao-YU9"/>
                         <outlet property="startTimeLabel" destination="uSE-hp-AvG" id="DyK-l0-KQi"/>
                         <outlet property="timeDifferenceLabel" destination="fBV-fz-bvL" id="fWo-tX-s1h"/>
                     </connections>

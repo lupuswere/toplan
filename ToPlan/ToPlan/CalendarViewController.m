@@ -12,6 +12,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "DBManager.h"
+#import "TaskDeadline.h"
+#import "TaskDeadlineTable.h"
 @interface CalendarViewController ()
 
 @end
@@ -25,6 +27,10 @@
     [self showCalendar];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self showCalendar];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -55,4 +61,20 @@
     appDelegate.selectedDate = curTime;
 }
 
+- (void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date {
+    // TODO: play with the coloring if we want to...
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    TaskDeadlineTable *a = [appDelegate taskDeadlineTable];
+    NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
+    [formater setDateFormat:@"yyyyMMdd"];
+    NSString *curTime = [formater stringFromDate:date];
+    for (TaskDeadline *task in a.taskDeadlines)
+    {
+        if ([task.date isEqualToString:curTime])
+        {
+                    dateItem.backgroundColor = [UIColor redColor];
+                    dateItem.textColor = [UIColor whiteColor];
+        }
+    }
+}
 @end

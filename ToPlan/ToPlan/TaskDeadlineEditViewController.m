@@ -53,7 +53,21 @@
             break;
     }
 }
-        
+
+
+
+
+///
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.taskNameTextField) {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
+
 - (IBAction)getAdviceButton:(id)sender
 {
     NSString *enteredText = [self.taskTypeTextField text];
@@ -61,10 +75,17 @@
     {
         NSNumber *totalTimeUsing = 0;
         NSInteger count = 0;
+//        NSInteger morning = 0;
+//        NSInteger afternoon = 0;
+//        NSInteger evening = 0;
         for(TaskRecord *tr in self.taskRecordTable.taskRecords)
         {
+//            NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
+//            [formater setDateFormat:@"yyyyMMdd"];
+//            NSString *curTime = [formater stringFromDate:tr.dateRecord];
             if ([tr.taskTypeRecord caseInsensitiveCompare: enteredText]==NSOrderedSame)
             {
+                //if(tr.startRecord.)
                 count++;
                 totalTimeUsing = [NSNumber numberWithDouble:(totalTimeUsing.doubleValue + tr.timeUsing.doubleValue)];
             }

@@ -45,17 +45,6 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//    NSString *str = appDelegate.selectedDate;
-//    int count = 0;
-//    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
-//    {
-//        if([str isEqualToString:task.date])
-//        {
-//            count = count + 1;
-//        }
-//    }
-//    return (NSInteger)count;
     return self.currentTaskDeadlines.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,8 +55,7 @@
     //MyLog(@"section %zd row %zd", indexPath.section, indexPath.row);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskDeadlineCell" forIndexPath:indexPath];
     TaskDeadline *thisTaskDeadline = self.currentTaskDeadlines[indexPath.row];
-    //if([str isEqualToString:thisTaskDeadline.date])
-    //{
+   
         cell.textLabel.text = thisTaskDeadline.taskName;
         NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
         [DateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
@@ -91,7 +79,6 @@
         
                 cell.textLabel.textColor = [UIColor whiteColor];
     }
-    //}
     return cell;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

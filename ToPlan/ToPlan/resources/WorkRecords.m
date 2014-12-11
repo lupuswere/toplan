@@ -50,13 +50,17 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //formate the start date of task
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
     [DateFormatter setDateFormat:@"MM-dd hh:mm"];
+    
+    //format the end date
     NSDateFormatter *DateFormatter02=[[NSDateFormatter alloc] init];
     [DateFormatter02 setDateFormat:@"hh:mm"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"allRecordCell" forIndexPath:indexPath];
     TaskRecord *thisTaskRecord = self.allRecord[indexPath.row];
     cell.textLabel.text = thisTaskRecord.taskNameRecord;
+    //format the output of task record
     NSString *st=[DateFormatter stringFromDate:thisTaskRecord.startRecord];
     NSString *et=[DateFormatter02 stringFromDate:thisTaskRecord.endRecord];
     

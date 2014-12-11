@@ -17,6 +17,32 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.taskRecordTable = [appDelegate taskRecordTable];
+    NSDate *fromDate = [NSDate date];
+    NSDate *toDate=self.theTaskDeadline.deadlineTime;
+    
+    
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    
+//    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+//                 interval:NULL forDate:fromDate];
+//    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+//                 interval:NULL forDate:toDate];
+//    
+//    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+//                                               fromDate:fromDate toDate:toDate options:0];
+//    self.remainingLabel.text = [NSString stringWithFormat:]
+    
+    NSTimeInterval timeDifference = [toDate timeIntervalSinceDate:fromDate]/3600;
+    if(timeDifference<0)
+    {
+     self.remainingLabel.text=@"Overdue!";
+        self.remainingLabel.textColor=[UIColor redColor];
+    }
+    else
+    {
+    NSString *timeDiff = [@((int)timeDifference) stringValue];
+    self.remainingLabel.text = [NSString stringWithFormat:@"%@ %@", timeDiff, @"hours to deadline!"];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -36,6 +62,8 @@
 
 - (IBAction)getEndTimeButton:(UIButton *)sender {
     NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    
+    
     [DateFormatter setDateFormat:@"MMdd hh:mm"];
     self.theTaskRecord.endRecord = [NSDate date];
     self.endTimeLabel.text = [DateFormatter stringFromDate:self.theTaskRecord.endRecord];

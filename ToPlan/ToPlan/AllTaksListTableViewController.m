@@ -96,6 +96,7 @@
     //NSString *str = appDelegate.selectedDate;
     for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
     {
+        //show all unfinished tasks
         if(!task.finished){
             [self.allTaskDeadlines addObject:task];
         }
@@ -113,7 +114,10 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
+        //delete row from the table view
         [_allTaskDeadlines removeObjectAtIndex:indexPath.row];
+        //delete row from the taskDeadlineTable
+        
         [self.taskDeadlineTable removeTaskDeadlinesAtIndexes:indexPath.row];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

@@ -13,6 +13,7 @@
 @interface TaskTrackingViewController : UIViewController
 - (IBAction)getBeginTimeButton:(id)sender;
 - (IBAction)getEndTimeButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *remainingLabel;
 @property (strong, nonatomic) TaskRecord *theTaskRecord;
 @property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *endTimeLabel;
