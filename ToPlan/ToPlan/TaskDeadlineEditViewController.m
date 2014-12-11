@@ -28,6 +28,7 @@
     }
     //[self.taskNameTextField endEditing:YES];
     self.taskNameTextField.delegate = self;
+    self.taskTypeTextField.delegate=self;
 }
 - (IBAction)added:(id)sender
 {
@@ -62,7 +63,7 @@
 ///
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == self.taskNameTextField) {
+    if (textField == self.taskNameTextField||textField == self.taskTypeTextField) {
         [textField resignFirstResponder];
         //return NO;
     }
