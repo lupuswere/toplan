@@ -26,6 +26,7 @@
     {
         self.segmentControl.selectedSegmentIndex = 0;
     }
+    [self.taskNameTextField endEditing:YES];
 }
 - (IBAction)added:(id)sender
 {
