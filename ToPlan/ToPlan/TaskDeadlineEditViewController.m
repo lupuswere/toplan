@@ -63,9 +63,9 @@
 {
     if (textField == self.taskNameTextField) {
         [textField resignFirstResponder];
-        return NO;
+        //return NO;
     }
-    return YES;
+    return NO;
 }
 
 
