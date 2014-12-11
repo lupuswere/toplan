@@ -20,7 +20,8 @@
 
 @implementation CalendarViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -36,14 +37,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showCalendar {
+- (void)showCalendar
+{
     CKCalendarView *calendar = [[CKCalendarView alloc] init];
     calendar.frame = CGRectMake(0, 50, [UIScreen mainScreen].bounds.size.width, 320);
     [self.view addSubview:calendar];
     calendar.delegate = self;
 }
 
-- (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
+- (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date
+{
     //TODO
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
@@ -52,7 +55,8 @@
     appDelegate.selectedDate = curTime;
 }
 
-- (void)calendar:(CKCalendarView *)calendar didDeselectDate:(NSDate *)date {
+- (void)calendar:(CKCalendarView *)calendar didDeselectDate:(NSDate *)date
+{
     //TODO
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
@@ -61,7 +65,8 @@
     appDelegate.selectedDate = curTime;
 }
 
-- (void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date {
+- (void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date
+{
     // TODO: play with the coloring if we want to...
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     TaskDeadlineTable *a = [appDelegate taskDeadlineTable];

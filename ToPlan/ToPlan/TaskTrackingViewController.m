@@ -47,7 +47,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"editTaskDeadline2"]){
+    if ([segue.identifier isEqualToString:@"editTaskDeadline2"])
+    {
         TaskDeadlineEditViewController *destination = segue.destinationViewController;
         destination.theTaskDeadline = self.theTaskDeadline;
     }

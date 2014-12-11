@@ -63,7 +63,8 @@
 ///
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == self.taskNameTextField||textField == self.taskTypeTextField) {
+    if (textField == self.taskNameTextField||textField == self.taskTypeTextField)
+    {
         [textField resignFirstResponder];
         //return NO;
     }
@@ -97,14 +98,17 @@
         {
             self.adviceLabel.text = @"You don't have record of this type.";
         }
-        else{
+        else
+        {
             NSNumber *averageUsing = [NSNumber numberWithDouble:(totalTimeUsing.doubleValue/count)];
             NSString *advice = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", @"For task type", enteredText, @",do", averageUsing.stringValue, @"mins each time."];
             self.adviceLabel.text = advice;
             self.adviceLabel.numberOfLines=2;
         }
     }
-    else{
+
+    else
+    {
         self.adviceLabel.text = @"You don't have record of this type.";
     }
 }

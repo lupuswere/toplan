@@ -70,7 +70,8 @@
     
     
     //if a task is overdue, make it orange
-    else if([thisTaskDeadline.deadlineTime compare:[NSDate date]] == NSOrderedAscending){
+    else if([thisTaskDeadline.deadlineTime compare:[NSDate date]] == NSOrderedAscending)
+    {
                 thisTaskDeadline.overdue=true;
         
                 cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", thisTaskDeadline.taskName, @"(overdue)"];
@@ -83,7 +84,8 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"editTaskDeadline"]){
+    if ([segue.identifier isEqualToString:@"editTaskDeadline"])
+    {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         TaskDeadline *selectedTaskDeadline = self.currentTaskDeadlines[indexPath.row];
         TaskTrackingViewController *destination = segue.destinationViewController;

@@ -70,7 +70,6 @@
     cell.detailTextLabel.textColor=[UIColor grayColor];
     return cell;
 }
-
 - (void)reBuildArray
 {
     self.allRecord = [[NSMutableArray alloc] init];
@@ -83,7 +82,6 @@
         }
     }
 }
-
 - (IBAction)backButton:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:^{
