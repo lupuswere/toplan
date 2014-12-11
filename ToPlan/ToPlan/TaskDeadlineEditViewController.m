@@ -63,7 +63,7 @@
         NSInteger count = 0;
         for(TaskRecord *tr in self.taskRecordTable.taskRecords)
         {
-            if ([tr.taskTypeRecord isEqualToString: enteredText])
+            if ([tr.taskTypeRecord caseInsensitiveCompare: enteredText]==NSOrderedSame)
             {
                 count++;
                 totalTimeUsing = [NSNumber numberWithDouble:(totalTimeUsing.doubleValue + tr.timeUsing.doubleValue)];
@@ -77,6 +77,7 @@
             NSNumber *averageUsing = [NSNumber numberWithDouble:(totalTimeUsing.doubleValue/count)];
             NSString *advice = [NSString stringWithFormat:@"%@ %@ %@ %@ %@", @"For task type", enteredText, @",do", averageUsing.stringValue, @"mins each time."];
             self.adviceLabel.text = advice;
+            self.adviceLabel.numberOfLines=2;
         }
     }
     else{

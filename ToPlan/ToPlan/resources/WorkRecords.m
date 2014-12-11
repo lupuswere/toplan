@@ -50,37 +50,22 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"MM-dd hh:mm"];
+    NSDateFormatter *DateFormatter02=[[NSDateFormatter alloc] init];
+    [DateFormatter02 setDateFormat:@"hh:mm"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"allRecordCell" forIndexPath:indexPath];
     TaskRecord *thisTaskRecord = self.allRecord[indexPath.row];
     cell.textLabel.text = thisTaskRecord.taskNameRecord;
-    NSString *st=[NSString stringWithFormat:@"%@", thisTaskRecord.startRecord];
-    NSString *et=[NSString stringWithFormat:@"%@", thisTaskRecord.endRecord];
+    NSString *st=[DateFormatter stringFromDate:thisTaskRecord.startRecord];
+    NSString *et=[DateFormatter02 stringFromDate:thisTaskRecord.endRecord];
     
-    NSString *details=[NSString stringWithFormat:@"%@ %@ %@ %@", @"From ",st, @" To ",et];
+    NSString *details=[NSString stringWithFormat:@"%@ %@ %@",st, @" To ",et];
     cell.detailTextLabel.text = details;
-    cell.detailTextLabel.numberOfLines=2;
+    cell.detailTextLabel.numberOfLines=1;
     cell.detailTextLabel.textColor=[UIColor grayColor];
-    //if([thisTaskRecord.deadlineTime compare:[NSDate date]] == NSOrderedAscending){
-//        thisTaskRecord.overdue=true;
-//        
-//        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", thisTaskRecord.taskName, @"(overdue)"];
-//        
-//        [cell setBackgroundColor:[UIColor colorWithRed:2 green:.8 blue:.2 alpha:1]];
-//        
-//        cell.textLabel.textColor = [UIColor whiteColor];
-//    }
-    //}
     return cell;
 }
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"editTaskDeadline3"]){
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//        TaskDeadline *selectedTaskDeadline = self.taskDeadlineTable.taskDeadlines[indexPath.row];
-//        TaskTrackingViewController *destination = segue.destinationViewController;
-//        destination.theTaskDeadline = selectedTaskDeadline;
-//    }
-//}
 
 - (void)reBuildArray
 {
@@ -101,17 +86,4 @@
         LogMethod();
     }];
 }
-
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete)
-//    {
-//        [_allRecord removeObjectAtIndex:indexPath.row];
-//        [self.taskDeadlineTable removeTaskDeadlinesAtIndexes:indexPath.row];
-//        // Delete the row from the data source
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }
-//    [tableView reloadData];
-//}
-
 @end
