@@ -26,7 +26,8 @@
     {
         self.segmentControl.selectedSegmentIndex = 0;
     }
-    [self.taskNameTextField endEditing:YES];
+    //[self.taskNameTextField endEditing:YES];
+    self.taskNameTextField.delegate = self;
 }
 - (IBAction)added:(id)sender
 {
