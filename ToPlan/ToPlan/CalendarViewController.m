@@ -24,7 +24,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    self.title = @"Calendar";
+    self.navigationItem.title = @"Calendar";
     [self showCalendar];
 }
 

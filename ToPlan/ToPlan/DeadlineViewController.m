@@ -20,6 +20,8 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.taskDeadlineTable = [appDelegate taskDeadlineTable];
+    self.title = @"Today";
+    self.navigationItem.title = @"Today";
 //    self.selectedTaskIndex = -1;
 //    NSString *str = appDelegate.selectedDate;
 //    for(TaskDeadline *task in self.taskDeadlineTable.taskDeadlines)
